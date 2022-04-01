@@ -6,26 +6,16 @@ import {AppComponent} from './app.component';
 import {CoreModule} from "./core/core.module";
 import {SharedModule} from "./shared/shared.module";
 import {LocationStrategy, PathLocationStrategy} from "@angular/common";
-import { TopbarComponent } from './layout/topbar/topbar.component';
-import { SidebarComponent } from './layout/sidebar/sidebar.component';
-import { FooterComponent } from './layout/footer/footer.component';
+import {TopbarComponent} from './layout/topbar/topbar.component';
+import {SidebarComponent} from './layout/sidebar/sidebar.component';
+import {FooterComponent} from './layout/footer/footer.component';
+import {SkeletonComponent} from './layout/skeleton/skeleton.component';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    TopbarComponent,
-    SidebarComponent,
-    FooterComponent
-  ],
-  imports: [
-    BrowserModule,
-    CoreModule,
-    SharedModule,
-    AppRoutingModule
-  ],
+  declarations: [AppComponent, TopbarComponent, SidebarComponent, FooterComponent, SkeletonComponent],
+  imports: [BrowserModule, CoreModule, SharedModule, AppRoutingModule],
   providers: [{
-    provide: LocationStrategy,
-    useClass: PathLocationStrategy
+    provide: LocationStrategy, useClass: PathLocationStrategy
   }],
   bootstrap: [AppComponent]
 })
